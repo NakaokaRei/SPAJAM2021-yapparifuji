@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		594E0CB2271197D700868780 /* MLSoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E0CB1271197D700868780 /* MLSoundManager.swift */; };
+		594E0CB527119F7D00868780 /* ChuckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E0CB427119F7D00868780 /* ChuckViewModel.swift */; };
+		594E0CBA2711A3D000868780 /* MySoundClassifier.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = 594E0CB92711A3D000868780 /* MySoundClassifier.mlkitmodel */; };
+		594E0CBD2711DD2500868780 /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 594E0CBC2711DD2500868780 /* Neumorphic */; };
 		597FC52F2710814D009B1FA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597FC52E2710814D009B1FA2 /* AppDelegate.swift */; };
 		597FC5312710814D009B1FA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597FC5302710814D009B1FA2 /* SceneDelegate.swift */; };
 		597FC5332710814D009B1FA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597FC5322710814D009B1FA2 /* ContentView.swift */; };
@@ -16,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		594E0CB1271197D700868780 /* MLSoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSoundManager.swift; sourceTree = "<group>"; };
+		594E0CB427119F7D00868780 /* ChuckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckViewModel.swift; sourceTree = "<group>"; };
+		594E0CB92711A3D000868780 /* MySoundClassifier.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MySoundClassifier.mlkitmodel; sourceTree = "<group>"; };
 		597FC52B2710814D009B1FA2 /* SPAJAM2021-yapparifuji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SPAJAM2021-yapparifuji.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		597FC52E2710814D009B1FA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		597FC5302710814D009B1FA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +38,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				594E0CBD2711DD2500868780 /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		594E0CB627119FBF00868780 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				594E0CB427119F7D00868780 /* ChuckViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		594E0CB727119FD000868780 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				597FC5322710814D009B1FA2 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		594E0CB82711A01900868780 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				594E0CB1271197D700868780 /* MLSoundManager.swift */,
+				594E0CB92711A3D000868780 /* MySoundClassifier.mlkitmodel */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
 		597FC5222710814D009B1FA2 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +89,11 @@
 		597FC52D2710814D009B1FA2 /* SPAJAM2021-yapparifuji */ = {
 			isa = PBXGroup;
 			children = (
+				594E0CB82711A01900868780 /* Function */,
+				594E0CB727119FD000868780 /* View */,
+				594E0CB627119FBF00868780 /* ViewModel */,
 				597FC52E2710814D009B1FA2 /* AppDelegate.swift */,
 				597FC5302710814D009B1FA2 /* SceneDelegate.swift */,
-				597FC5322710814D009B1FA2 /* ContentView.swift */,
 				597FC5342710814E009B1FA2 /* Assets.xcassets */,
 				597FC5392710814E009B1FA2 /* LaunchScreen.storyboard */,
 				597FC53C2710814E009B1FA2 /* Info.plist */,
@@ -91,6 +126,9 @@
 			dependencies = (
 			);
 			name = "SPAJAM2021-yapparifuji";
+			packageProductDependencies = (
+				594E0CBC2711DD2500868780 /* Neumorphic */,
+			);
 			productName = "SPAJAM2021-yapparifuji";
 			productReference = 597FC52B2710814D009B1FA2 /* SPAJAM2021-yapparifuji.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +156,9 @@
 				Base,
 			);
 			mainGroup = 597FC5222710814D009B1FA2;
+			packageReferences = (
+				594E0CBB2711DD2500868780 /* XCRemoteSwiftPackageReference "neumorphic" */,
+			);
 			productRefGroup = 597FC52C2710814D009B1FA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,6 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				594E0CBA2711A3D000868780 /* MySoundClassifier.mlkitmodel in Sources */,
+				594E0CB2271197D700868780 /* MLSoundManager.swift in Sources */,
+				594E0CB527119F7D00868780 /* ChuckViewModel.swift in Sources */,
 				597FC52F2710814D009B1FA2 /* AppDelegate.swift in Sources */,
 				597FC5312710814D009B1FA2 /* SceneDelegate.swift in Sources */,
 				597FC5332710814D009B1FA2 /* ContentView.swift in Sources */,
@@ -345,6 +389,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		594E0CBB2711DD2500868780 /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		594E0CBC2711DD2500868780 /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 594E0CBB2711DD2500868780 /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 597FC5232710814D009B1FA2 /* Project object */;
 }

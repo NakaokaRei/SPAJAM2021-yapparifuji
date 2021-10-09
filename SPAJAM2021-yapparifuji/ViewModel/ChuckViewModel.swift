@@ -10,10 +10,15 @@ import Combine
 
 class ChuckViewModel: ObservableObject {
     @Published var className: String = "hello"
-    private let mlSoundManager = MLSoundManager()
+    private let notificationModel = NotificationModel()
+    let mlSoundManager = MLSoundManager()
 
     init() {
         mlSoundManager.resultsObserver.delegate = self
+    }
+    
+    func notification() {
+        notificationModel.makeNotification(genre: "チャック", item: "空いてますよ")
     }
 }
 

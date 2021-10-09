@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26D05FB52711F3790064B6D9 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D05FB42711F3790064B6D9 /* NotificationModel.swift */; };
 		594E0CB2271197D700868780 /* MLSoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E0CB1271197D700868780 /* MLSoundManager.swift */; };
 		594E0CB527119F7D00868780 /* ChuckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594E0CB427119F7D00868780 /* ChuckViewModel.swift */; };
 		594E0CBA2711A3D000868780 /* MySoundClassifier.mlkitmodel in Sources */ = {isa = PBXBuildFile; fileRef = 594E0CB92711A3D000868780 /* MySoundClassifier.mlkitmodel */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26D05FB42711F3790064B6D9 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		594E0CB1271197D700868780 /* MLSoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSoundManager.swift; sourceTree = "<group>"; };
 		594E0CB427119F7D00868780 /* ChuckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckViewModel.swift; sourceTree = "<group>"; };
 		594E0CB92711A3D000868780 /* MySoundClassifier.mlkitmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MySoundClassifier.mlkitmodel; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				594E0CB427119F7D00868780 /* ChuckViewModel.swift */,
+				26D05FB42711F3790064B6D9 /* NotificationModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D05FB52711F3790064B6D9 /* NotificationModel.swift in Sources */,
 				594E0CBA2711A3D000868780 /* MySoundClassifier.mlkitmodel in Sources */,
 				594E0CB2271197D700868780 /* MLSoundManager.swift in Sources */,
 				594E0CB527119F7D00868780 /* ChuckViewModel.swift in Sources */,

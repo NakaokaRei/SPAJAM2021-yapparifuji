@@ -55,6 +55,14 @@ class MLSoundManager {
             }
         }
     }
+    
+    public func stop() {
+        do {
+            try audioEngine.stop()
+        } catch( _) {
+            print("error in starting the Audio Engin")
+        }
+    }
 }
 
 class ResultsObserver: NSObject, SNResultsObserving {

@@ -14,7 +14,7 @@ class NotificationModel {
     
     init() {
         UNUserNotificationCenter.current().delegate = self.notificationDelegate
-        setNotification(genre: "チャック", item: "空いてますよ")
+//        setNotification(genre: "チャック", item: "空いてますよ")
     }
 
     func setNotification(genre:String ,item:String){
@@ -35,7 +35,7 @@ class NotificationModel {
     func makeNotification(genre:String ,item:String){
 
         //日時
-        let notificationDate = Date().addingTimeInterval(5)//10秒後
+        let notificationDate = Date().addingTimeInterval(3)//10秒後
         let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: notificationDate)
 
         //日時でトリガー指定

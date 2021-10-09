@@ -18,9 +18,9 @@ struct ContentView: View {
         ZStack {
             mainColor.edgesIgnoringSafeArea(.all)
             VStack {
-                Text("CHUCK CHECKER")
-                    .font(.system(size: 26, weight: .black, design: .default))
-                    .padding(30)
+                Text("CHUCK CHECK")
+                    .font(.system(size: 35, weight: .black, design: .default))
+                    .padding()
                 VStack {
                     ZStack {
                         RoundedRectangle(cornerRadius: cornerRadius).fill(mainColor).frame(width: 300, height: 300)
@@ -28,10 +28,16 @@ struct ContentView: View {
                         Image(chuckViewModel.className)
                     }.padding()
                     ZStack {
-                        RoundedRectangle(cornerRadius: cornerRadius).fill(mainColor).frame(width: 300, height: 100)
+                        RoundedRectangle(cornerRadius: cornerRadius).fill(mainColor).frame(width: 300, height: 180)
                             .softOuterShadow()
-                        Text(String(format: "%.f", self.chuckViewModel.confidence) + "%")
-                            .font(.system(size: 50, weight: .black, design: .default))
+                        VStack {
+                            Text("CHUCK　" + String(format: "%.f", chuckViewModel.chuckConf) + "%")
+                                .font(.system(size: 35, weight: .black, design: .default))
+                            Text("WATER　" + String(format: "%.f", chuckViewModel.waterConf) + "%")
+                                .font(.system(size: 35, weight: .black, design: .default))
+                            Text("NOISE　" + String(format: "%.f", chuckViewModel.noiseConf) + "%")
+                                .font(.system(size: 35, weight: .black, design: .default))
+                        }
                     }.padding()
                 }
                 HStack {
@@ -41,14 +47,17 @@ struct ContentView: View {
                             .fontWeight(.bold)
                     }
                         .softButtonStyle(RoundedRectangle(cornerRadius: cornerRadius))
-                        .padding(30)
-                    Button(action: {self.chuckViewModel.mlSoundManager.stop()}) {
+                        .padding()
+                    Button(action: {
+                        self.chuckViewModel.mlSoundManager.stop()
+                        self.chuckViewModel.notification()
+                    }) {
                         Text("Stop")
                             .font(.system(size: 22, weight: .black, design: .default))
                             .fontWeight(.bold)
                     }
                         .softButtonStyle(RoundedRectangle(cornerRadius: cornerRadius))
-                        .padding(30)
+                    .padding()
                 }
             }
         }

@@ -9,12 +9,12 @@ import AVKit
 import SoundAnalysis
 
 protocol ClassifierDelegate {
-    func displayPredictionResult(identifier: String, confidence: Double)
+    func displayPredictionResult(identifier: String, confidence: Double, classifications: [SNClassification])
 }
 
 class MLSoundManager {
     private let audioEngine = AVAudioEngine()
-    private var soundClassifier = spajam_cml()
+    private var soundClassifier = spajam_cml2()
     var inputFormat: AVAudioFormat!
     var analyzer: SNAudioStreamAnalyzer!
     var resultsObserver = ResultsObserver()
@@ -65,7 +65,7 @@ class MLSoundManager {
     }
 
     private func startAnalyze() {
-        audioEngine.inputNode.installTap(onBus: 0, bufferSize: 8000, format: inputFormat) { buffer, time in
+        audioEngine.inputNode.installTap(onBus: 0, bufferSize: 3000, format: inputFormat) { buffer, time in
             self.analysisQueue.async {
                 self.analyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
             }
@@ -82,7 +82,7 @@ class ResultsObserver: NSObject, SNResultsObserving {
 
         let confidence = classification.confidence*100
 
-        delegate?.displayPredictionResult(identifier: classification.identifier, confidence: confidence)
+        delegate?.displayPredictionResult(identifier: classification.identifier, confidence: confidence, classifications: result.classifications)
     }
 
     func request(_ request: SNRequest, didFailWithError error: Error) {

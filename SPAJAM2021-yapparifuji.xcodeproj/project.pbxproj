@@ -20,6 +20,7 @@
 		597FC53B2710814E009B1FA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597FC5392710814E009B1FA2 /* LaunchScreen.storyboard */; };
 		60FDAC5F27120A5500E7503D /* spajam_cml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 60FDAC5E27120A5500E7503D /* spajam_cml.mlmodel */; };
 		60FDAC61271216E300E7503D /* spajam_cml2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 60FDAC60271216E300E7503D /* spajam_cml2.mlmodel */; };
+		60FDAC632712640400E7503D /* spajam_cml3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 60FDAC622712640400E7503D /* spajam_cml3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		597FC53C2710814E009B1FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60FDAC5E27120A5500E7503D /* spajam_cml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = spajam_cml.mlmodel; sourceTree = "<group>"; };
 		60FDAC60271216E300E7503D /* spajam_cml2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = spajam_cml2.mlmodel; sourceTree = "<group>"; };
+		60FDAC622712640400E7503D /* spajam_cml3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = spajam_cml3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				594E0CB1271197D700868780 /* MLSoundManager.swift */,
 				594E0CB92711A3D000868780 /* MySoundClassifier.mlkitmodel */,
 				60FDAC5E27120A5500E7503D /* spajam_cml.mlmodel */,
+				60FDAC622712640400E7503D /* spajam_cml3.mlmodel */,
 				60FDAC60271216E300E7503D /* spajam_cml2.mlmodel */,
 			);
 			path = Function;
@@ -204,6 +207,7 @@
 				60FDAC5F27120A5500E7503D /* spajam_cml.mlmodel in Sources */,
 				597FC5312710814D009B1FA2 /* SceneDelegate.swift in Sources */,
 				597FC5332710814D009B1FA2 /* ContentView.swift in Sources */,
+				60FDAC632712640400E7503D /* spajam_cml3.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

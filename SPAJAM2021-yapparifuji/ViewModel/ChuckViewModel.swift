@@ -9,7 +9,8 @@ import SwiftUI
 import Combine
 
 class ChuckViewModel: ObservableObject {
-    @Published var className: String = "hello"
+    @Published var className: String = "noise"
+    @Published var confidence = 0
     private let notificationModel = NotificationModel()
     let mlSoundManager = MLSoundManager()
 
@@ -25,7 +26,8 @@ class ChuckViewModel: ObservableObject {
 extension ChuckViewModel: ClassifierDelegate {
     func displayPredictionResult(identifier: String, confidence: Double) {
         DispatchQueue.main.async {
-            self.className = ("Recognition: \(identifier)\nConfidence \(confidence)")
+            self.className = identifier
+            self.confidence = Int(confidence)
         }
     }
 }

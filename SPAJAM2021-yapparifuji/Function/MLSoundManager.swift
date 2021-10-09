@@ -14,7 +14,7 @@ protocol ClassifierDelegate {
 
 class MLSoundManager {
     private let audioEngine = AVAudioEngine()
-    private var soundClassifier = MySoundClassifier()
+    private var soundClassifier = spajam_cml()
     var inputFormat: AVAudioFormat!
     var analyzer: SNAudioStreamAnalyzer!
     var resultsObserver = ResultsObserver()
@@ -24,6 +24,22 @@ class MLSoundManager {
         startAudioEngine()
         setUpAnalyzer()
         startAnalyze()
+    }
+
+    func start() {
+        do {
+            try audioEngine.start()
+        } catch( _) {
+            print("error in starting the Audio Engin")
+        }
+    }
+
+    func stop() {
+        do {
+            try audioEngine.stop()
+        } catch( _) {
+            print("error in starting the Audio Engin")
+        }
     }
 
     private func startAudioEngine() {
@@ -53,14 +69,6 @@ class MLSoundManager {
             self.analysisQueue.async {
                 self.analyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
             }
-        }
-    }
-    
-    public func stop() {
-        do {
-            try audioEngine.stop()
-        } catch( _) {
-            print("error in starting the Audio Engin")
         }
     }
 }

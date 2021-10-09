@@ -17,6 +17,7 @@
 		597FC5352710814E009B1FA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597FC5342710814E009B1FA2 /* Assets.xcassets */; };
 		597FC5382710814E009B1FA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597FC5372710814E009B1FA2 /* Preview Assets.xcassets */; };
 		597FC53B2710814E009B1FA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597FC5392710814E009B1FA2 /* LaunchScreen.storyboard */; };
+		60FDAC5F27120A5500E7503D /* spajam_cml.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 60FDAC5E27120A5500E7503D /* spajam_cml.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		597FC5372710814E009B1FA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		597FC53A2710814E009B1FA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		597FC53C2710814E009B1FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60FDAC5E27120A5500E7503D /* spajam_cml.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = spajam_cml.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				594E0CB1271197D700868780 /* MLSoundManager.swift */,
 				594E0CB92711A3D000868780 /* MySoundClassifier.mlkitmodel */,
+				60FDAC5E27120A5500E7503D /* spajam_cml.mlmodel */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				594E0CB2271197D700868780 /* MLSoundManager.swift in Sources */,
 				594E0CB527119F7D00868780 /* ChuckViewModel.swift in Sources */,
 				597FC52F2710814D009B1FA2 /* AppDelegate.swift in Sources */,
+				60FDAC5F27120A5500E7503D /* spajam_cml.mlmodel in Sources */,
 				597FC5312710814D009B1FA2 /* SceneDelegate.swift in Sources */,
 				597FC5332710814D009B1FA2 /* ContentView.swift in Sources */,
 			);

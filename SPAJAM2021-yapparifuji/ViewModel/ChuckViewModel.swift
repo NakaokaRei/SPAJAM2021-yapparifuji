@@ -90,7 +90,7 @@ extension ChuckViewModel: ClassifierDelegate {
             mlSoundManager.stop()
             self.notification()
             self.classificationListReset()
-        } else if (validWater > 4 && validChuck > 1) {
+        } else if (validWater > 3 && validChuck > 0) {
             notificationModel.makeNotification(genre: "チャック", item: "を閉めました！！！！！！！！！！！！！！！！")
             self.classificationListReset()
         }

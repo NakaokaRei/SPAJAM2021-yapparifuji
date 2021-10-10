@@ -14,7 +14,7 @@ protocol ClassifierDelegate {
 
 class MLSoundManager {
     private let audioEngine = AVAudioEngine()
-    private var soundClassifier = spajam_cml2()
+    private var soundClassifier = spajam_cml4()
     var inputFormat: AVAudioFormat!
     var analyzer: SNAudioStreamAnalyzer!
     var resultsObserver = ResultsObserver()

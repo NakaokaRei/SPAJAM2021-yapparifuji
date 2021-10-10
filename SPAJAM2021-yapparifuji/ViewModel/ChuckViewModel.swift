@@ -32,7 +32,7 @@ class ChuckViewModel: ObservableObject {
     }
     
     func notification() {
-        notificationModel.makeNotification(genre: "チャック", item: "空いてますよ")
+        notificationModel.makeNotification(genre: "チャック", item: "開いてますよ")
     }
 }
 
@@ -78,22 +78,34 @@ extension ChuckViewModel: ClassifierDelegate {
         // noise -> water -> chuckの順になった時に通知を発行する (listの数が20ないと判定できない)
         if (classificationList.count >= 20){
             
+//            validNoise = classificationList[1...10].filter({$0 == "noise"}).count
+//            validWater = classificationList[6...11].filter({$0 == "water"}).count
+//            validChuck = classificationList[9...19].filter({$0 == "chack"}).count
             validNoise = classificationList[1...10].filter({$0 == "noise"}).count
-            validWater = classificationList[6...11].filter({$0 == "water"}).count
-            validChuck = classificationList[9...19].filter({$0 == "chack"}).count
+            validChuck = classificationList[6...11].filter({$0 == "chack"}).count
+            validWater = classificationList[9...19].filter({$0 == "water"}).count
             
-            print(validNoise, validWater, validChuck)
+            print(validNoise, validChuck, validWater)
         }
         
         //ここでめちゃくちゃ良しなに判定してほしい
-        if (validNoise > 4 && validWater > 5 && validChuck == 0) {
+//        if (validNoise > 4 && validWater > 5 && validChuck == 0) {
+//            mlSoundManager.stop()
+//            self.notification()
+//            self.classificationListReset()
+//        } else if (validWater > 3 && validChuck > 0) {
+//            notificationModel.makeNotification(genre: "チャック", item: "を閉めました！！！！！！！！！！！！！！！！")
+//            self.classificationListReset()
+//        }
+
+        if (validNoise > 4 && validChuck > 0 && validWater > 2) {
+            mlSoundManager.stop()
+            notificationModel.makeNotification(genre: "チャック", item: "を閉めました！！！！！！！！！！！！！！！！")
+            self.classificationListReset()
+        } else if (validNoise > 4 && validChuck == 0 && validWater > 2) {
             mlSoundManager.stop()
             self.notification()
             self.classificationListReset()
-        } else if (validWater > 3 && validChuck > 0) {
-            notificationModel.makeNotification(genre: "チャック", item: "を閉めました！！！！！！！！！！！！！！！！")
-            self.classificationListReset()
         }
-        
     }
 }

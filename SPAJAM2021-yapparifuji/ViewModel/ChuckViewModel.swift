@@ -16,17 +16,18 @@ class ChuckViewModel: ObservableObject {
     @Published var waterConf = 0.0
     @Published var noiseConf = 0.0
     private let notificationModel = NotificationModel()
-    var classList: [String] = []
     let mlSoundManager = MLSoundManager()
     var classificationList: [String] = [] //こんなところに
 
     init() {
         mlSoundManager.resultsObserver.delegate = self
+        classificationListReset()
     }
 
-    func classListReset() {
+    func classificationListReset() {
+        self.classificationList = []
         for _ in 0..<20 {
-
+            self.classificationList.append("noise")
         }
     }
     
@@ -78,15 +79,20 @@ extension ChuckViewModel: ClassifierDelegate {
         if (classificationList.count >= 20){
             
             validNoise = classificationList[1...10].filter({$0 == "noise"}).count
-            validWater = classificationList[6...15].filter({$0 == "water"}).count
-            validChuck = classificationList[13...19].filter({$0 == "chack"}).count
+            validWater = classificationList[6...11].filter({$0 == "water"}).count
+            validChuck = classificationList[9...19].filter({$0 == "chack"}).count
             
             print(validNoise, validWater, validChuck)
         }
         
         //ここでめちゃくちゃ良しなに判定してほしい
-        if (validNoise > 3 && validWater > 4 && validChuck > 4){
+        if (validNoise > 4 && validWater > 5 && validChuck == 0) {
+            mlSoundManager.stop()
             self.notification()
+            self.classificationListReset()
+        } else if (validWater > 4 && validChuck > 1) {
+            notificationModel.makeNotification(genre: "チャック", item: "を閉めました！！！！！！！！！！！！！！！！")
+            self.classificationListReset()
         }
         
     }

@@ -43,7 +43,7 @@ class NotificationModel {
 
         //通知内容
         let content = UNMutableNotificationContent()
-        content.title = "注意！"
+        content.title = "チャックチェック！"
         content.body = "\(genre)\(item)"
         content.sound = UNNotificationSound.default
 

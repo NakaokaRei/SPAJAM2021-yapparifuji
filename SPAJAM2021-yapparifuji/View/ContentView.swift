@@ -50,7 +50,7 @@ struct ContentView: View {
                         .padding()
                     Button(action: {
                         self.chuckViewModel.mlSoundManager.stop()
-                        self.chuckViewModel.notification()
+                        //self.chuckViewModel.notification()
                     }) {
                         Text("Stop")
                             .font(.system(size: 22, weight: .black, design: .default))
